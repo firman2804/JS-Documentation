@@ -66,6 +66,7 @@ nav#navbar header {
 nav#navbar ul {
   list-style-type: none;
   height: 88%;
+  margin-bottom: 40px;
   padding: 0 32px;
   overflow-x: hidden;
   overflow-y: auto;
