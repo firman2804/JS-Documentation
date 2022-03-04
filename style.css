@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap");
+
+:root {
+  --bg-primary: #fff4a9;
+  --bg-code: #252a37;
+  --color-code: #bfc7d5;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 32px;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: lighter;
+  display: grid;
+  grid-template-columns: 20% auto;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* aside style */
+
+aside {
+  display: block;
+}
+
+#toogle {
+  width: 24px;
+  height: 24px;
+  position: fixed;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  display: none;
+}
+
+#toogle .close {
+  display: none;
+}
+
+nav#navbar {
+  background-color: var(--bg-primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: max-content;
+  width: 20%;
+  height: 100%;
+}
+
+nav#navbar header {
+  padding: 40px 32px;
+}
+
+nav#navbar ul {
+  list-style-type: none;
+  height: 88%;
+  padding: 0 32px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+nav#navbar ul li:first-child {
+  margin: 0;
+}
+
+nav#navbar ul li {
+  margin: 25px 0;
+  transition: 0.3s ease-in-out;
+}
+
+nav#navbar ul li:hover {
+  transform: translateX(10px);
+}
+
+nav#navbar ul li.active {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+nav#navbar ul li.active::before {
+  content: ">";
+  color: red;
+  font-weight: bold;
+}
+
+/* end asside style */
+
+/* main style */
+
+main#main-doc {
+  display: block;
+  padding: 32px 90px;
+}
+
+#search-input {
+  width: 100%;
+  height: 40px;
+  border-style: none none solid none;
+  border-width: 1px;
+  border-color: rgb(199, 199, 199);
+  font-size: larger;
+  padding: 0 10px;
+  transition: 300ms ease-out;
+}
+
+#search-input:focus {
+  background-color: var(--bg-primary);
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+section {
+  margin-top: 2rem;
+  line-height: 1.5rem;
+}
+
+section.main-section .section-body p {
+  margin: 1rem 0;
+}
+
+section.main-section .section-body ul {
+  margin-left: 50px;
+}
+
+section.main-section .section-body ul li {
+  margin: 1rem 0;
+}
+
+code {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--bg-code);
+  color: var(--color-code);
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 1px 0px;
+  margin-left: 0.8rem;
+}
+/* end main style */
+
+/* breakpoint */
+@media only screen and (max-width: 980px) {
+  #toogle {
+    display: block;
+  }
+
+  nav#navbar {
+    left: -100%;
+    box-shadow: 10px 2px 12px 0px rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 10px 2px 12px 0px rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 10px 2px 12px 0px rgba(0, 0, 0, 0.19);
+  }
+
+  nav#navbar.show {
+    left: 0 !important;
+    transition: 1 ease-in-out;
+  }
+
+  main#main-doc {
+    grid-column: 1/3;
+    padding: 32px 20px;
+  }
+}
+/* end breakpoint */
